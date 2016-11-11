@@ -221,7 +221,19 @@ Survivalguiden kan du hitta <a href="https://drive.google.com/file/d/0Bwgqtg2huT
                             <br />
                             Du kan se vår livestream på <a href="http://www.twitch.tv/mk_wonderlan">http://www.twitch.tv/mk_wonderlan</a>.
                             <br />
-                            <iframe src="http://www.twitch.tv/mk_wonderlan/embed" frameborder="0" scrolling="no" height="378" width="620"></iframe><a href="http://www.twitch.tv/mk_wonderlan?tt_medium=live_embed&tt_content=text_link" style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px;text-decoration:underline;">Watch live video from mk_wonderlan on www.twitch.tv</a>
+                           <script src= "http://player.twitch.tv/js/embed/v1.js"></script>
+<div id="TEST"></div>
+<script type="text/javascript">
+    var options = {
+        width: 854,
+        height: 480,
+        channel: "mk_wonderlan", 
+        //video: "{VIDEO_ID}"       
+    };
+    var player = new Twitch.Player("TEST", options);
+    player.setVolume(0.5);
+    player.addEventListener(Twitch.Player.PAUSE, () => { console.log('Player is paused!'); });
+</script>
                             <br />
                         </div>
                     </div>
