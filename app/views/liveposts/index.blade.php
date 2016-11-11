@@ -50,23 +50,31 @@
 
 @section('content')
         <!--stream -->
-    <section id="stream" style="margin-bottom: 20px;">
-        <h3>Live Stream</h3>
-        <br />
-        <iframe src="http://www.twitch.tv/mk_wonderlan/embed" frameborder="0" scrolling="no" height="378" width="620" style="display:block; margin: 0px auto;"></iframe>
-    </section>
+                <div class="row">
+                    <div class="span4 collapse-group">
+                        <a class="btn btnSection--icon btnSection btnSection--0" href="#">
 
+                            <i>+</i><span>Live Stream</span>
 
-    @foreach ($liveposts as $livepost)
-        <div class="row">
-            <div class="span4 collapse-group">
-                <a class="btn btnSection--icon btnSection btnSection--0" href="#">
-
-                    <i>+</i><span>{{$livepost->header}}</span>
-
-                </a>
-                <div class="collapse">
-                    {{$livepost->text}}
+                        </a>
+                        <div class="collapse">
+                            <br />
+                            Du kan se vår livestream på <a href="http://www.twitch.tv/mk_wonderlan">http://www.twitch.tv/mk_wonderlan</a>.
+                            <br />
+                           <script src= "http://player.twitch.tv/js/embed/v1.js"></script>
+<div id="TEST"></div>
+<script type="text/javascript">
+    var options = {
+        width: 854,
+        height: 480,
+        channel: "mk_wonderlan", 
+        //video: "{VIDEO_ID}"       
+    };
+    var player = new Twitch.Player("TEST", options);
+    player.setVolume(0.5);
+    player.addEventListener(Twitch.Player.PAUSE, () => { console.log('Player is paused!'); });
+</script>
+                    <br />
                 </div>
             </div>
         </div>
